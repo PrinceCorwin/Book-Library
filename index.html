@@ -11,11 +11,63 @@
     ></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!-- add link to fonts here -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Redressed&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- add nav bar here -->
-    <main></main>
+    <main>
+      <div class="title">Cindy's Reading Room</div>
+      <div class="bookList" id="bookList"></div>
+      <button id="addBook">ADD BOOK</button>
+    </main>
+    <form action="" id="bookForm">
+      <label for="bookTitle">Title</label>
+      <input type="text" id="bookTitle" name="bookTitle" />
+      <label for="bookAuthor">Author</label>
+      <input type="text" id="bookAuthor" name="bookAuthor" />
+      <label for="bookPages">Length (Pages)</label>
+      <input type="number" id="bookPages" name="bookPages" />
+      <label for="bookStatus">Read Status</label>
+      <select name="bookStatus" id="bookStatus">
+        <option value="Unread">Unread</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Finished">Finished</option>
+      </select>
+      <label for="bookRating">Rating</label>
+      <select name="bookRating" id="bookRating">
+        <option value="Unrated">Unrated</option>
+        <option value="1 Star">1 Star</option>
+        <option value="2 Stars">2 Stars</option>
+        <option value="3 Stars">3 Stars</option>
+        <option value="4 Stars">4 Stars</option>
+        <option value="5 Stars">5 Stars</option>
+      </select>
+
+      <button type="button" id="submitForm">SUBMIT</button>
+      <button id="cancelForm">CANCEL</button>
+    </form>
+    <!-- NAVBAR START -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/AmalfiMakesIt"
+        ><i class="fab fa-facebook fa-2x"></i
+      ></a>
+      <a href="https://www.linkedin.com/in/steve-corwin-amalfitano-79345698/"
+        ><i class="fab fa-linkedin fa-2x"></i
+      ></a>
+      <a href="https://www.instagram.com/amalfi.makes.it/"
+        ><i class="fab fa-instagram fa-2x"></i
+      ></a>
+      <a href="https://github.com/PrinceCorwin"
+        ><i class="fab fa-github fa-2x"></i
+      ></a>
+      <a href="https://www.youtube.com/c/TribeOfOne"
+        ><i class="fab fa-youtube fa-2x"></i
+      ></a>
+    </div>
+    <!-- NAVBAR END -->
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,14 @@
+layout html,css
+Title and ADD BOOK button
+event listener for ADD BOOK button
+ADD BOOK fires addBookToLibrary function, which adds book and fires publishLibrary function
+addBookToLibrary() {
+    open form for user input: title, author, pages, status, rating
+
+    push to library array
+}
+publishLibrary() {
+    loop through library array and do the following for each:
+    add to DOM: title, author, pages, status, rating, DELETE button, CHANGE STATUS button
+    addEventListener for DELETE and CHANGE STATUS buttons
+}
