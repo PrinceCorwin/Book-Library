@@ -19,8 +19,11 @@
   <body>
     <main>
       <div class="title">Cindy's Reading Room</div>
-      <div class="bookList" id="bookList"></div>
-      <button id="addBook">ADD BOOK</button>
+      <div class="flex-container">
+        <div class="bookListTitle">My Book List</div>
+        <div class="bookList" id="bookList"></div>
+        <button id="addBook">ADD BOOK</button>
+      </div>
     </main>
     <form action="" id="bookForm">
       <label for="bookTitle">Title</label>
@@ -35,18 +38,18 @@
         <option value="In Progress">In Progress</option>
         <option value="Finished">Finished</option>
       </select>
-      <label for="bookRating">Rating</label>
+      <label for="bookRating"> My Rating</label>
       <select name="bookRating" id="bookRating">
         <option value="Unrated">Unrated</option>
-        <option value="1 Star">1 Star</option>
-        <option value="2 Stars">2 Stars</option>
-        <option value="3 Stars">3 Stars</option>
-        <option value="4 Stars">4 Stars</option>
-        <option value="5 Stars">5 Stars</option>
+        <option value="🌟">🌟</option>
+        <option value="🌟🌟">🌟🌟</option>
+        <option value="🌟🌟🌟">🌟🌟🌟</option>
+        <option value="🌟🌟🌟🌟">🌟🌟🌟🌟</option>
+        <option value="🌟🌟🌟🌟🌟">🌟🌟🌟🌟🌟</option>
       </select>
 
       <button type="button" id="submitForm">SUBMIT</button>
-      <button id="cancelForm">CANCEL</button>
+      <button type="button" id="cancelForm">CANCEL</button>
     </form>
     <!-- NAVBAR START -->
     <div class="social-links">

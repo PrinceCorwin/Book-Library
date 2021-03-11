@@ -10,6 +10,7 @@ cancelFormButton.addEventListener("click", function () {
   bookForm.style.visibility = "hidden";
 });
 addABook.addEventListener("click", function () {
+  bookForm.reset();
   bookForm.style.visibility = "visible";
 });
 const submitBook = document.getElementById("submitForm");

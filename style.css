@@ -4,7 +4,7 @@
   --clr-midtone: ;
   --clr-darktone: ;
   --clr-contrast1: #00eafd;
-  --clr-contrast2: ;
+  --clr-contrast2: #1cb8b0;
   --ff-primary: "Redressed", cursive;
   --ff-accent: "Montserrat", sans-serif;
   --ff-accent2: "Montserrat", sans-serif;
@@ -21,36 +21,81 @@ body {
   padding: 2rem;
   background-image: url("images/library-background.png");
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right top,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.4)
+  );
+  backdrop-filter: blur(3px);
+  width: 600px;
+  padding: 2rem 0;
+  margin: 2rem auto;
+}
 .title {
+  text-align: center;
   color: var(--clr-primary);
   font-family: var(--ff-primary);
   font-size: 4rem;
+  /* margin-bottom: 3rem; */
 }
 form {
   visibility: hidden;
   z-index: 1000;
   padding: 2rem;
-  background-color: blue;
+  background-color: var(--clr-contrast2);
+  width: 300px;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
 }
 .bookList {
+  width: 100%;
   color: white;
   font-family: var(--ff-accent2);
+  margin-top: 2rem;
+}
+.bookListTitle {
+  letter-spacing: 2px;
+  color: white;
+  font-family: var(--ff-primary);
+  font-size: 2rem;
+  align-self: center;
+  text-align: center;
 }
 .newBook {
-  padding: 10px;
+  /* display: inline-block; */
+  /* width: 100%; */
+  padding: 1rem 2rem;
+  background-color: rgba(220, 0, 253, 0.4);
+  backdrop-filter: blur(3px);
+
+  margin: 1rem;
+}
+.newTitle,
+.newAuthor,
+.newPages,
+.newStatus {
+  margin-bottom: 3px;
 }
 .newTitle {
 }
 .newAuthor {
+  text-transform: uppercase;
 }
 .newPages {
 }
 .newStatus {
 }
 .newRating {
+}
+.deleteButton {
+  margin-top: 1rem;
 }
 label {
   display: inline-block;
@@ -59,6 +104,7 @@ label {
 }
 input,
 select {
+  width: 100%;
   font-family: var(--ff-accent);
   font-style: italic;
   display: block;
@@ -71,7 +117,7 @@ button,
   border-radius: 15px;
 }
 #addBook {
-  margin: 20px 0;
+  margin: 1rem 2rem;
 }
 /* social links starts */
 .social-links {
@@ -111,5 +157,8 @@ button,
 @media screen and (max-width: 600px) {
   body {
     padding: 0;
+  }
+  .flex-container {
+    width: 100%;
   }
 }
