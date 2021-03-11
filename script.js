@@ -1,4 +1,11 @@
 let library = [];
+
+let parseLibrary = localStorage.getItem("myLibrary");
+if (parseLibrary != null) {
+  library = JSON.parse(parseLibrary);
+  publishLibrary();
+}
+console.log(library);
 // may uncomment the following publishLibrary() after database set-up.
 // publishLibrary();
 
@@ -88,5 +95,11 @@ function publishLibrary() {
       });
       document.getElementById("bookList").appendChild(newBook);
     }
+    function populateStorage() {
+      // console.log(library);
+      let stringLibrary = JSON.stringify(library);
+      localStorage.setItem("myLibrary", stringLibrary);
+    }
+    populateStorage();
   }
 }
