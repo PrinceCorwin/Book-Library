@@ -17,13 +17,61 @@
     />
   </head>
   <body>
-    <main>
-      <div class="title">Cindy's Reading Room</div>
-      <div class="flex-container">
-        <div class="bookListTitle">My Book List</div>
-        <div class="bookList" id="bookList"></div>
-        <button id="addBook">ADD BOOK</button>
+    <div class="header">
+      <div class="header-left">
+        <div class="title">
+          <div class="main-title">The Purple Page</div>
+          <div class="subTitle">PERSONAL LIBRARY</div>
+        </div>
+        <div class="header-mid">
+          <div class="header-buttons">
+            <button id="clear-storage">CLEAR STORAGE</button>
+            <button id="addBook">ADD BOOK</button>
+          </div>
+          <div class="log">
+            <div class="numBooks">
+              Total Books: <span id="numbooks">0</span>
+            </div>
+            <div class="completed">
+              Completed: <span id="completed">0</span>
+            </div>
+            <div class="in-progress">
+              In Progress: <span id="in-progress">0</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="header-right">
+        <a href="https://amalfimakesit.com/"
+          ><img src="images/AmalfiMakesItWebDev.png" alt=""
+        /></a>
+        <!-- soc links START -->
+        <div class="social-links">
+          <a href="https://www.facebook.com/AmalfiMakesIt"
+            ><i class="fab fa-facebook fa-1x"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/steve-corwin-amalfitano-79345698/"
+            ><i class="fab fa-linkedin fa-1x"></i
+          ></a>
+          <a href="https://www.instagram.com/amalfi.makes.it/"
+            ><i class="fab fa-instagram fa-1x"></i
+          ></a>
+          <a href="https://github.com/PrinceCorwin"
+            ><i class="fab fa-github fa-1x"></i
+          ></a>
+          <a href="https://www.youtube.com/c/TribeOfOne"
+            ><i class="fab fa-youtube fa-1x"></i
+          ></a>
+        </div>
+        <!-- soc links END -->
+      </div>
+    </div>
+    <main>
+      <!-- <div class="flex-container"> -->
+      <div class="bookList" id="bookList"></div>
+      <!-- </div> -->
     </main>
     <form action="" id="bookForm">
       <label for="bookTitle">Title</label>
@@ -51,26 +99,29 @@
       <button type="button" id="submitForm">SUBMIT</button>
       <button type="button" id="cancelForm">CANCEL</button>
     </form>
-    <!-- NAVBAR START -->
-    <div class="social-links">
-      <a href="https://www.facebook.com/AmalfiMakesIt"
-        ><i class="fab fa-facebook fa-2x"></i
-      ></a>
-      <a href="https://www.linkedin.com/in/steve-corwin-amalfitano-79345698/"
-        ><i class="fab fa-linkedin fa-2x"></i
-      ></a>
-      <a href="https://www.instagram.com/amalfi.makes.it/"
-        ><i class="fab fa-instagram fa-2x"></i
-      ></a>
-      <a href="https://github.com/PrinceCorwin"
-        ><i class="fab fa-github fa-2x"></i
-      ></a>
-      <a href="https://www.youtube.com/c/TribeOfOne"
-        ><i class="fab fa-youtube fa-2x"></i
-      ></a>
-    </div>
-    <!-- NAVBAR END -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script>
+      const firebase = require("firebase");
+      // Required for side-effects
+      require("firebase/firestore");
+      let firebaseConfig = {
+        apiKey: "AIzaSyCH6k43PhGh2IIJT0hf9_5-p3busSpyxWs",
+        authDomain: "book-library-odin.firebaseapp.com",
+        projectId: "book-library-odin",
+        storageBucket: "book-library-odin.appspot.com",
+        messagingSenderId: "1052906156270",
+        appId: "1:1052906156270:web:e51076f7624609cff803ff",
+        measurementId: "G-L4J5P7J71L",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      let db = firebase.firestore();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

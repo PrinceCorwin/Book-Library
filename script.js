@@ -1,29 +1,35 @@
 let library = [];
 
+// variables and event listeners
+const addABook = document.getElementById("addBook");
+const clearStorage = document.getElementById("clear-storage");
+const bookForm = document.getElementById("bookForm");
+const cancelFormButton = document.getElementById("cancelForm");
+const numBooks = document.getElementById("numbooks");
+const completed = document.getElementById("completed");
+const inProgress = document.getElementById("in-progress");
+cancelFormButton.addEventListener("click", function () {
+  bookForm.style.visibility = "hidden";
+});
+
+addABook.addEventListener("click", function () {
+  bookForm.reset();
+  bookForm.style.visibility = "visible";
+});
+clearStorage.addEventListener("click", function () {
+  library = [];
+  publishLibrary();
+});
+const submitBook = document.getElementById("submitForm");
+submitForm.addEventListener("click", function () {
+  addBookToLibrary();
+});
 let parseLibrary = localStorage.getItem("myLibrary");
 if (parseLibrary != null) {
   library = JSON.parse(parseLibrary);
   publishLibrary();
 }
 console.log(library);
-// may uncomment the following publishLibrary() after database set-up.
-// publishLibrary();
-
-// variables and event listeners
-const addABook = document.getElementById("addBook");
-const bookForm = document.getElementById("bookForm");
-const cancelFormButton = document.getElementById("cancelForm");
-cancelFormButton.addEventListener("click", function () {
-  bookForm.style.visibility = "hidden";
-});
-addABook.addEventListener("click", function () {
-  bookForm.reset();
-  bookForm.style.visibility = "visible";
-});
-const submitBook = document.getElementById("submitForm");
-submitForm.addEventListener("click", function () {
-  addBookToLibrary();
-});
 // book constructor
 function Book(title, author, pages, status, rating) {
   this.title = title;
@@ -61,7 +67,7 @@ function publishLibrary() {
       newBook.className = "newBook";
       let deleteButton = document.createElement("BUTTON");
       deleteButton.className = "deleteButton";
-      deleteButton.textContent = "DELETE";
+      deleteButton.textContent = "X";
       let newTitle = document.createElement("DIV");
       newTitle.className = "newTitle";
       newTitle.textContent = "TITLE: " + library[i].title;
@@ -75,7 +81,7 @@ function publishLibrary() {
       newPages.textContent = "LENGTH: " + library[i].pages + " pages";
 
       let newStatus = document.createElement("DIV");
-      newPages.className = "newStatus";
+      newStatus.className = "newStatus";
       newStatus.textContent = "STATUS: " + library[i].status;
 
       let newRating = document.createElement("DIV");
@@ -101,5 +107,22 @@ function publishLibrary() {
       localStorage.setItem("myLibrary", stringLibrary);
     }
     populateStorage();
+  }
+  numBooks.textContent = library.length;
+
+  finishedBooks();
+  function finishedBooks() {
+    let completedCount = 0;
+    let inProgressCount = 0;
+    for (let i = 0; i < library.length; i++) {
+      if (library[i].status === "Finished") {
+        completedCount++;
+      }
+      if (library[i].status === "In Progress") {
+        inProgressCount++;
+      }
+    }
+    completed.textContent = completedCount;
+    inProgress.textContent = inProgressCount;
   }
 }
