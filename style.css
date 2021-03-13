@@ -19,27 +19,12 @@
   padding: 0;
 }
 body {
-  /* padding: 2rem; */
   background-image: url("images/library-background.png");
 }
 .footer {
   display: none;
 }
-/* .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  background: linear-gradient(
-    to right top,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.4)
-  );
-  backdrop-filter: blur(3px);
-  width: fit-content;
-  padding: 0.5rem;
-  margin: 2rem auto;
-} */
+
 .header {
   background-color: var(--clr-darktone);
   display: flex;
@@ -48,8 +33,6 @@ body {
   padding: 1rem;
 }
 .header-right {
-  /* height: 100px; */
-  /* background-color: white; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -57,7 +40,6 @@ body {
 }
 .header-left {
   width: 100%;
-  /* background-color: white; */
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -67,8 +49,6 @@ body {
   display: flex;
 }
 .header-right > a {
-  /* background-color: red; */
-  /* align-self: flex-start; */
   cursor: pointer;
   margin-bottom: 5px;
   transition: 0.2s;
@@ -83,16 +63,13 @@ body {
   align-items: center;
 }
 .main-title {
-  /* background-color: white; */
   text-align: center;
   color: var(--clr-primary);
   font-family: var(--ff-primary);
   font-size: 4rem;
   text-shadow: 1px 1px white;
-  /* margin-bottom: 3rem; */
 }
 .subTitle {
-  /* background-color: white; */
   text-align: center;
   font-family: var(--ff-accent);
   font-size: 1.5rem;
@@ -106,17 +83,19 @@ body {
 }
 button,
 #submitForm {
-  /* background: linear-gradient(
-    to right top,
-    var(--clr-light),
-    var(--clr-midtone)
-  ); */
+  outline: none;
   color: var(--clr-white);
   background-color: transparent;
   box-shadow: -3px -3px 5px rgba(254, 212, 255, 0.4),
     5px 5px 10px rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
   border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+}
+button:hover,
+#submitForm:hover {
+  box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.6),
+    5px 5px 10px rgba(254, 212, 255, 0.4);
 }
 #addBook,
 #clear-storage {
@@ -138,7 +117,6 @@ form {
     var(--clr-contrast1),
     var(--clr-contrast2)
   );
-  /* background-color: var(--clr-contrast2); */
   width: 300px;
   position: absolute;
   top: 0;
@@ -155,18 +133,10 @@ form {
   font-family: var(--ff-accent2);
   margin-top: 1rem;
 }
-/* .bookListTitle {
-  letter-spacing: 2px;
-  color: white;
-  font-family: var(--ff-primary);
-  font-size: 2rem;
-  align-self: center;
-  text-align: center;
-} */
+
 .newBook {
   outline: 12px solid rgba(255, 255, 255, 0.3);
   border: 1px solid white;
-  /* display: inline-block; */
   width: 320px;
   padding: 1.5rem;
   background-color: rgba(220, 0, 253, 0.4);
@@ -199,8 +169,6 @@ form {
   background-color: transparent;
   top: 0;
   right: 0;
-  /* margin: 5px; */
-  /* border: 1px solid white; */
   padding: 2px 2px 1px 2px;
 }
 /* form start */
@@ -222,16 +190,10 @@ select {
 /* form end */
 /* social links starts */
 .social-links {
-  /* background-color: black; */
   width: 100%;
-  /* height: 300px; */
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-around;
   align-items: center;
-  /* position: absolute;
-  top: 0;
-  right: 0; */
 }
 /* fab is FA icon class */
 .fab {
@@ -247,7 +209,6 @@ select {
 @media screen and (max-width: 800px) {
   .header {
     padding: 0.3rem;
-    /* justify-content: center; */
   }
   .header-right {
     display: none;
@@ -256,33 +217,19 @@ select {
     display: flex;
   }
   .footer > a {
-    /* background-color: red; */
-    /* align-self: flex-start; */
     cursor: pointer;
     transition: 0.2s;
   }
   .footer > a:hover {
     transform: scale(1.05);
   }
-  .social-links {
-    /* height: 100%; */
 
-    /* width: 100%; */
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
-    /* align-items: center; */
-  }
-  /* .flex-container {
-    flex-direction: column;
-  } */
   .log {
     padding: 1rem;
     margin: 0;
   }
   .header-mid {
     width: 100%;
-    /* background-color: white; */
     justify-content: space-between;
   }
   .header-left {
@@ -302,12 +249,6 @@ select {
   .subTitle {
     font-size: 1rem;
   }
-  .header {
-    /* padding: 0; */
-  }
-  /* .flex-container {
-    width: 100%;
-  } */
 }
 @media screen and (max-width: 350px) {
   .main-title {

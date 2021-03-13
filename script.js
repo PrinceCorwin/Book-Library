@@ -30,7 +30,7 @@ if (parseLibrary != null) {
   library = JSON.parse(parseLibrary);
   publishLibrary();
 }
-console.log(library);
+// console.log(library);
 // book constructor
 function Book(title, author, pages, status, rating) {
   this.title = title;
@@ -51,7 +51,7 @@ function addBookToLibrary() {
   const rating = document.getElementById("bookRating").value;
   const myBook = new Book(title, author, pages, status, rating);
   library.push(myBook);
-  console.log(library);
+  // console.log(library);
   bookForm.style.visibility = "hidden";
   publishLibrary();
 }
@@ -69,22 +69,38 @@ function publishLibrary() {
       let deleteButton = document.createElement("BUTTON");
       deleteButton.className = "deleteButton";
       deleteButton.textContent = "X";
+
       let newTitle = document.createElement("DIV");
       newTitle.className = "newTitle";
-      newTitle.textContent = "TITLE: " + library[i].title;
+      newTitle.innerHTML =
+        "<span style = 'color: white'>TITLE: </span>" +
+        "<span style = 'color: #21FD00'>" +
+        library[i].title +
+        "</span>";
 
       let newAuthor = document.createElement("DIV");
       newAuthor.className = "newAuthor";
-      newAuthor.textContent = "AUTHOR: " + library[i].author;
+      newAuthor.innerHTML =
+        "<span style = 'color: white'>Author: </span>" +
+        "<span style = 'color: #00FDDC'>" +
+        library[i].author +
+        "</span>";
 
       let newPages = document.createElement("DIV");
       newPages.className = "newPages";
-      newPages.textContent = "LENGTH: " + library[i].pages + " pages";
+      newPages.innerHTML =
+        "<span style = 'color: white'>LENGTH: </span>" +
+        "<span style = 'color: #DAF7A6'>" +
+        library[i].pages +
+        "</span>";
 
       let newStatus = document.createElement("DIV");
       newStatus.className = "newStatus";
-      newStatus.textContent = "STATUS: " + library[i].status;
-
+      newStatus.innerHTML =
+        "<span style = 'color: white'>STATUS: </span>" +
+        "<span style = 'color: yellow'>" +
+        library[i].status +
+        "</span>";
       let newRating = document.createElement("DIV");
       newRating.className = "newRating";
       newRating.textContent = "MY RATING: " + library[i].rating;
@@ -96,7 +112,7 @@ function publishLibrary() {
       newBook.appendChild(newRating);
       newBook.appendChild(deleteButton);
       deleteButton.addEventListener("click", function () {
-        console.log("clicked");
+        // console.log("clicked");
         library.splice(i, 1);
         publishLibrary();
       });
