@@ -18,6 +18,7 @@ addABook.addEventListener("click", function () {
 });
 clearStorage.addEventListener("click", function () {
   library = [];
+  localStorage.clear();
   publishLibrary();
 });
 const submitBook = document.getElementById("submitForm");
