@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Library</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/6c80d95586.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="library-style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Redressed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="title">
+          <div class="main-title">The Purple Page</div>
+          <div class="subTitle">PERSONAL LIBRARY</div>
+        </div>
+        <div class="header-mid">
+          <div class="header-buttons">
+            <button id="clear-storage">CLEAR STORAGE</button>
+            <button id="addBook">ADD BOOK</button>
+          </div>
+          <div class="log">
+            <div class="numBooks">
+              Total Books: <span id="numbooks">0</span>
+            </div>
+            <div class="completed">
+              Completed: <span id="completed">0</span>
+            </div>
+            <div class="in-progress">
+              In Progress: <span id="in-progress">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <a href="https://amalfimakesit.com/"
+          ><img src="images/AmalfiMakesItWebDev.svg" alt="" width="200"
+        /></a>
+        <!-- soc links START -->
+        <div class="social-links">
+          <a href="https://www.facebook.com/AmalfiMakesIt"
+            ><i class="fab fa-facebook fa-1x"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/steve-corwin-amalfitano-79345698/"
+            ><i class="fab fa-linkedin fa-1x"></i
+          ></a>
+          <a href="https://www.instagram.com/amalfi.makes.it/"
+            ><i class="fab fa-instagram fa-1x"></i
+          ></a>
+          <a href="https://github.com/PrinceCorwin"
+            ><i class="fab fa-github fa-1x"></i
+          ></a>
+          <a href="https://www.youtube.com/c/TribeOfOne"
+            ><i class="fab fa-youtube fa-1x"></i
+          ></a>
+        </div>
+        <!-- soc links END -->
+      </div>
+    </div>
+    <main>
+      <!-- <div class="flex-container"> -->
+      <div class="bookList" id="bookList"></div>
+      <!-- </div> -->
+    </main>
+    <form action="" id="bookForm">
+      <label for="bookTitle"
+        >Title <span class="required"><em>(required)</em></span></label
+      >
+      <input type="text" id="bookTitle" name="bookTitle" />
+      <label for="bookAuthor"
+        >Author <span class="required"><em>(required)</em></span></label
+      >
+      <input type="text" id="bookAuthor" name="bookAuthor" />
+      <label for="bookPages">Length (Pages)</label>
+      <input type="number" id="bookPages" name="bookPages" />
+      <label for="bookStatus">Read Status</label>
+      <select name="bookStatus" id="bookStatus">
+        <option value="Unread">Unread</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Finished">Finished</option>
+      </select>
+      <label for="bookRating"> My Rating</label>
+      <select name="bookRating" id="bookRating">
+        <option value="Unrated">Unrated</option>
+        <option value="🌟">🌟</option>
+        <option value="🌟🌟">🌟🌟</option>
+        <option value="🌟🌟🌟">🌟🌟🌟</option>
+        <option value="🌟🌟🌟🌟">🌟🌟🌟🌟</option>
+        <option value="🌟🌟🌟🌟🌟">🌟🌟🌟🌟🌟</option>
+      </select>
+
+      <button type="button" id="submitForm">SUBMIT</button>
+      <button type="button" id="cancelForm">CANCEL</button>
+    </form>
+    <footer class="footer">
+      <a href="https://amalfimakesit.com/"
+        ><img src="images/AmalfiMakesItWebDev.svg" alt="" width="200"
+      /></a>
+      <!-- soc links START -->
+      <div class="social-links">
+        <a href="https://www.facebook.com/AmalfiMakesIt"
+          ><i class="fab fa-facebook fa-1x"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/steve-corwin-amalfitano-79345698/"
+          ><i class="fab fa-linkedin fa-1x"></i
+        ></a>
+        <a href="https://www.instagram.com/amalfi.makes.it/"
+          ><i class="fab fa-instagram fa-1x"></i
+        ></a>
+        <a href="https://github.com/PrinceCorwin"
+          ><i class="fab fa-github fa-1x"></i
+        ></a>
+        <a href="https://www.youtube.com/c/TribeOfOne"
+          ><i class="fab fa-youtube fa-1x"></i
+        ></a>
+      </div>
+      <!-- soc links END -->
+    </footer>
+    <!-- firebase code starts -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script>
+      const firebase = require("firebase");
+      // Required for side-effects
+      require("firebase/firestore");
+      let firebaseConfig = {
+        apiKey: "AIzaSyCH6k43PhGh2IIJT0hf9_5-p3busSpyxWs",
+        authDomain: "book-library-odin.firebaseapp.com",
+        projectId: "book-library-odin",
+        storageBucket: "book-library-odin.appspot.com",
+        messagingSenderId: "1052906156270",
+        appId: "1:1052906156270:web:e51076f7624609cff803ff",
+        measurementId: "G-L4J5P7J71L",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      let db = firebase.firestore();
+    </script> -->
+    <!-- firebase code stops -->
+    <script src="library-script.js"></script>
+  </body>
+</html>
