@@ -21,9 +21,6 @@
 body {
   background-image: url("images/library-background.png");
 }
-.footer {
-  display: none;
-}
 
 .header {
   background-color: var(--clr-darktone);
@@ -32,12 +29,12 @@ body {
   align-items: center;
   padding: 1rem;
 }
-.header-right {
+/* .header-right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
+} */
 .header-left {
   width: 100%;
   padding: 0 20px;
@@ -48,19 +45,22 @@ body {
 .header-mid {
   display: flex;
 }
-.header-right > a {
+/* .header-right > a {
   cursor: pointer;
   margin-bottom: 5px;
   transition: 0.2s;
 }
 .header-right > a:hover {
   transform: scale(1.05);
-}
+} */
 .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+main {
+  min-height: 90vh;
 }
 .main-title {
   text-align: center;
@@ -194,41 +194,56 @@ select {
 }
 
 /* form end */
-/* social links starts */
-.social-links {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-/* fab is FA icon class */
-.fab {
-  color: var(--clr-white);
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.fab:hover {
-  color: var(--clr-contrast1);
+/* footer start */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #dcdcdc;
+  background-color: black;
 }
-/* social links ends */
+footer > div {
+  padding: 1rem;
+}
+.footer-contact {
+  font-family: var(--ff-accent);
+  color: var(--clr-lighter);
+}
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+}
+footer a,
+footer .fab,
+footer .fas,
+footer img {
+  /* text-decoration: none; */
+  color: lightblue;
+  transition: all 0.2s ease-in-out;
+}
+footer a:hover,
+footer .fab:hover,
+footer .fas:hover,
+footer img:hover {
+  transform: scale(1.1);
+  color: yellow;
+}
+.footer-logo {
+  width: 200px;
+}
+.footer-social {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.copyright {
+  padding: 0.5rem 0;
+}
+/* footer ends */
 @media screen and (max-width: 800px) {
   .header {
     padding: 0.3rem;
-  }
-  .header-right {
-    display: none;
-  }
-  .footer {
-    margin-top: 30px;
-    display: flex;
-  }
-  .footer > a {
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .footer > a:hover {
-    transform: scale(1.05);
   }
 
   .log {
@@ -255,6 +270,13 @@ select {
   }
   .subTitle {
     font-size: 1rem;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contact {
+    text-align: center;
   }
 }
 @media screen and (max-width: 350px) {
